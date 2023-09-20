@@ -1,0 +1,9 @@
+- Text2Text Generation (Geração de Texto para Texto): Para esta tarefa, você pode usar um dos seguintes conjuntos de dados:
+    - [Multi30k]: Um conjunto de dados que consiste em 30.000 pares de frases em inglês, alemão e francês, extraídos de legendas de imagens. Este conjunto de dados é adequado para treinar modelos que possam gerar descrições de imagens ou traduzir frases entre idiomas.
+    https://github.com/multi30k/dataset
+    - [XSum]: Um conjunto de dados que consiste em mais de 200.000 artigos jornalísticos da BBC em inglês, juntamente com resumos de uma única frase. Este conjunto de dados é adequado para treinar modelos que possam gerar resumos abstrativos curtos e informativos.
+    https://huggingface.co/datasets/xsum
+    - [ParaCrawl]: Um conjunto de dados que consiste em mais de 3 bilhões de sentenças paralelas em 40 idiomas extraídas da web. Este conjunto de dados é adequado para treinar modelos que possam traduzir textos entre vários idiomas e domínios.
+    https://paracrawl.eu/
+    - [Tatoeba]: Um conjunto de dados que consiste em mais de 8 milhões de sentenças paralelas em 325 idiomas extraídas do projeto Tatoeba, uma plataforma colaborativa para criar e compartilhar sentenças exemplares. Este conjunto de dados é adequado para treinar modelos que possam gerar exemplos simples e naturais em diferentes idiomas.
+    https://tatoeba.org/pt-br/downloads

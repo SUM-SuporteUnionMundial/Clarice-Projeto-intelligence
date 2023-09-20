@@ -1,0 +1,9 @@
+- Question Answering: Esta é a tarefa de recuperar a resposta a uma pergunta a partir de um texto dado. Alguns conjuntos de dados populares para esta tarefa são:
+    - SQuAD: Um conjunto de dados que consiste em 100.000 perguntas sobre 536 artigos da Wikipedia, juntamente com trechos do texto que contêm as respostas.
+    https://huggingface.co/datasets/squad
+    - Natural Questions: Um conjunto de dados que consiste em 307.373 perguntas reais dos usuários do Google sobre 174.015 páginas da Wikipedia, juntamente com trechos do texto que contêm as respostas curtas e longas.
+    https://ai.google.com/research/NaturalQuestions/download
+    - TriviaQA: Um conjunto de dados que consiste em 95.000 perguntas triviais sobre 662 artigos da Wikipedia e 76.907 páginas web, juntamente com trechos do texto que contêm as respostas.
+    http://nlp.cs.washington.edu/triviaqa/
+    - TyDi QA: Um conjunto de dados que consiste em 200.000 perguntas em 11 idiomas tipologicamente diversos, juntamente com trechos do texto que contêm as respostas.
+    https://github.com/google-research-datasets/tydiqa#download-the-dataset

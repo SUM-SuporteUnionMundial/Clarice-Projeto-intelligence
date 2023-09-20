@@ -1,0 +1,122 @@
+
+- Multiple Choice (Escolha Múltipla): Para esta tarefa, você pode usar um dos seguintes conjuntos de dados:
+    - RACE: Um conjunto de dados que consiste em mais de 28.000 perguntas de escolha múltipla sobre artigos em inglês, extraídos de exames escolares na China. Este conjunto de dados é adequado para treinar modelos que possam avaliar a compreensão de leitura e o raciocínio lógico.
+    https://huggingface.co/datasets/race
+    - SWAG: Um conjunto de dados que consiste em mais de 113.000 perguntas de escolha múltipla sobre situações hipotéticas, geradas a partir de legendas de vídeos. Este conjunto de dados é adequado para treinar modelos que possam prever o desfecho mais provável ou plausível de uma situação.
+    https://huggingface.co/datasets/swag
+    - PIQA: Um conjunto de dados que consiste em mais de 16.000 perguntas de escolha múltipla sobre problemas práticos do cotidiano, extraídos da web. Este conjunto de dados é adequado para treinar modelos que possam resolver problemas comuns usando o senso comum e o conhecimento geral.
+    https://huggingface.co/datasets/piqa
+    - MCTest: Um conjunto de dados que consiste em mais de 2.600 perguntas de escolha múltipla sobre histórias ficcionais curtas, escritas por humanos. Este conjunto de dados é adequado para treinar modelos que possam responder perguntas que requerem compreensão do enredo, dos personagens e dos detalhes das histórias.
+    https://mattr1.github.io/mctest/
+
+- Zero-Shot Classification: Esta é a tarefa de classificar um texto em uma ou mais classes sem nenhum treinamento prévio ou conhecimento das classes. Alguns conjuntos de dados populares para esta tarefa são:
+    - XNLI: Um conjunto de dados que consiste em 5.000 pares de frases em 15 idiomas, juntamente com rótulos indicando se as frases são implicações, contradições ou neutras entre si.
+    https://github.com/facebookresearch/XNLI
+    - MNLI: Um conjunto de dados que consiste em 433.000 pares de frases em inglês, juntamente com rótulos indicando se as frases são implicações, contradições ou neutras entre si.
+    https://huggingface.co/datasets/multi_nli
+    - SNLI: Um conjunto de dados que consiste em 570.000 pares de frases em inglês, juntamente com rótulos indicando se as frases são implicações, contradições ou neutras entre si.
+    https://nlp.stanford.edu/projects/snli/
+    - HANS: Um conjunto de dados que consiste em 30.000 pares de frases em inglês, juntamente com rótulos indicando se as frases são implicações ou não-implicações entre si.
+    https://huggingface.co/datasets/hans
+
+- Token Classification (Classificação de Token): Para esta tarefa, você pode usar um dos seguintes conjuntos de dados:
+    - CoNLL-2003: Um conjunto de dados para Reconhecimento de Entidades Nomeadas (NER) em inglês, alemão, espanhol e holandês, com quatro tipos de entidades: Pessoa, Localização, Organização e Miscelânea. Este conjunto de dados é adequado para treinar modelos que possam extrair nomes próprios e suas categorias semânticas a partir de um texto.
+    https://huggingface.co/datasets/conll2003
+    - [WNUT-17]: Um conjunto de dados para NER em textos provenientes das mídias sociais, com seis tipos de entidades: Pessoa, Localização, Corporação, Produto, Grupo Criativo e Outro. Este conjunto de dados é adequado para treinar modelos que possam lidar com entidades emergentes e não convencionais a partir de um texto informal.
+    https://huggingface.co/datasets/wnut_17
+    - [UD-POS]: Um conjunto de dados para Part-of-Speech (PoS) tagging em 124 idiomas, usando o esquema universal de dependências. Este conjunto de dados é adequado para treinar modelos que possam atribuir etiquetas gramaticais a cada palavra ou token em um texto.
+    https://universaldependencies.org/
+    - [Mac-Morpho]: Um conjunto de dados para PoS tagging em português brasileiro, com 26 etiquetas gramaticais. Este conjunto de dados é adequado para treinar modelos que possam analisar a estrutura morfológica do português brasileiro.
+    http://www.nilc.icmc.usp.br/macmorpho/
+
+- Fill-Mask (Preenchimento de Máscara): Para esta tarefa, você pode usar um dos seguintes conjuntos de dados:
+    - [MLM]: Um conjunto de dados que consiste em textos mascarados gerados a partir do corpus OSCAR, um grande corpus multilíngue extraído da web. Este conjunto de dados é adequado para treinar modelos que possam prever palavras ou tokens mascarados em um texto usando o contexto.
+    https://paperswithcode.com/dataset/mlm
+    - [Wikiann]: Um conjunto de dados que consiste em textos mascarados gerados a partir do corpus Wikiann, um corpus anotado com entidades nomeadas em 282 idiomas. Este conjunto de dados é adequado para treinar modelos que possam prever entidades nomeadas mascaradas em um texto usando o contexto.
+    https://huggingface.co/datasets/wikiann
+    - [TyDi QA]: Um conjunto de dados que consiste em textos mascarados gerados a partir do corpus TyDi QA, um corpus para perguntas e respostas em 11 idiomas tipologicamente diversos. Este conjunto de dados é adequado para treinar modelos que possam prever palavras ou tokens mascarados relacionados a perguntas e respostas usando o contexto.
+    https://github.com/google-research-datasets/tydiqa
+    - [Lince]: Um conjunto de dados que consiste em textos mascarados gerados a partir do corpus Lince, um corpus anotado com etiquetas gramaticais em português brasileiro. Este conjunto de dados é adequado para treinar modelos que possam prever palavras ou tokens mascarados relacionados à estrutura morfológica usando o contexto.
+    https://ritual.uh.edu/lince/datasets
+
+- Summarization (Sumarização): Para esta tarefa, você pode usar um dos seguintes conjuntos de dados:
+    - [CNN/Daily Mail]: Um conjunto de dados que consiste em mais de 300.000 artigos jornalísticos em inglês, juntamente com resumos destacados. Este conjunto de dados é adequado para treinar modelos que possam gerar resumos extrativos a partir de textos longos.
+    https://www.kaggle.com/datasets/gowrishankarp/newspaper-text-summarization-cnn-dailymail
+    - [XSum]: Um conjunto de dados que consiste em mais de 200.000 artigos jornalísticos da BBC em inglês, juntamente com resumos de uma única frase. Este conjunto de dados é adequado para treinar modelos que possam gerar resumos abstrativos curtos e informativos.
+    https://huggingface.co/datasets/xsum
+    - [Gigaword]: Um conjunto de dados que consiste em mais de 10 milhões de artigos jornalísticos em inglês, juntamente com títulos abreviados. Este conjunto de dados é adequado para treinar modelos que possam gerar títulos concisos a partir de textos longos.
+    https://www.tensorflow.org/datasets/catalog/gigaword?hl=pt-br
+    - [Multi-News]: Um conjunto de dados que consiste em mais de 50.000 artigos jornalísticos sobre o mesmo evento a partir de diferentes fontes, juntamente com resumos multi-documento. Este conjunto de dados é adequado para treinar modelos que possam gerar resumos abrangentes a partir de múltiplas perspectivas.
+    https://huggingface.co/datasets/multi_news
+
+
+- Sentence Similarity (Similaridade de Frases): Para esta tarefa, você pode usar um dos seguintes conjuntos de dados:
+    - [GitHub - brmson/dataset-sts: Semantic Text Similarity Dataset Hub]: Um conjunto de dados que reúne vários conjuntos de dados para medir a similaridade semântica entre pares de frases em vários idiomas e domínios. Este conjunto de dados é adequado para treinar modelos que possam avaliar o grau de similaridade ou implicação entre duas frases.
+    https://github.com/brmson/dataset-sts
+    - [arXiv:2105.07623 [cs.CL]]: Um conjunto de dados que consiste em mais de 1 milhão de pares de frases em inglês, juntamente com pontuações indicando a similaridade baseada em contextos. Este conjunto de dados é adequado para treinar modelos que possam calcular a similaridade entre frases usando seus contextos.
+    https://arxiv.org/abs/2105.07623
+    - [Textual Similarity | Kaggle]: Um conjunto de dados que consiste em mais de 10.000 pares de parágrafos em inglês, juntamente com pontuações indicando o grau de similaridade entre eles. Este conjunto de dados é adequado para treinar modelos que possam comparar o significado e o conteúdo de dois textos.
+    https://www.kaggle.com/datasets/kanhataak/task-finding-semantic-textual-similarity
+
+- Translation: Esta é a tarefa de traduzir um texto de um idioma para outro. Alguns conjuntos de dados populares para esta tarefa são:
+    - WMT: Uma coleção de conjuntos de dados para avaliação de sistemas de tradução automática em vários pares de idiomas, incluindo inglês, alemão, francês, espanhol, russo, chinês e outros.
+    https://www.statmt.org/wmt20/
+    - OPUS: Uma coleção de conjuntos de dados para tradução automática baseada em corpus paralelos extraídos da web, incluindo vários domínios como notícias, livros, legendas e outros.
+    https://opus.nlpl.eu/
+    - ParaCrawl: Um conjunto de dados que consiste em mais de 3 bilhões de sentenças paralelas em 40 idiomas extraídas da web.
+    https://paracrawl.eu/
+    - Tatoeba: Um conjunto de dados que consiste em mais de 8 milhões de sentenças paralelas em 325 idiomas extraídas do projeto Tatoeba, uma plataforma colaborativa para criar e compartilhar sentenças exemplares.
+    https://tatoeba.org/pt-br/downloads
+
+- Conversational (Conversacional): Para esta tarefa, você pode usar um dos seguintes conjuntos de dados:
+    - [DailyDialog]: Um conjunto de dados que consiste em mais de 13.000 diálogos diários sobre vários tópicos e cenários, juntamente com atos e emoções dos falantes. Este conjunto de dados é adequado para treinar modelos que possam gerar respostas conversacionais naturais e coerentes.
+    https://huggingface.co/datasets/daily_dialog
+    - [PersonaChat]: Um conjunto de dados que consiste em mais de 160.000 voltas conversacionais entre dois interlocutores fictícios que têm perfis pessoais atribuídos. Este conjunto de dados é adequado para treinar modelos que possam gerar respostas conversacionais consistentes e personalizadas.
+    https://www.kaggle.com/datasets/atharvjairath/personachat
+    - [BlendedSkillTalk]: Um conjunto de dados que consiste em mais de 7.000 diálogos entre humanos e agentes treinados para combinar habilidades conversacionais como personalidade, conhecimento e empatia. Este conjunto
+    https://huggingface.co/datasets/blended_skill_talk
+    - [DialoGPT]: Um modelo pré-treinado para geração conversacional baseado no GPT-2, que foi treinado em mais de 147 milhões de voltas conversacionais extraídas do Reddit. Este modelo é adequado para gerar respostas conversacionais informais e humorísticas.
+    https://www.microsoft.com/en-us/research/project/large-scale-pretraining-for-response-generation/downloads/
+    - [ConvAI2]: Um conjunto de dados que consiste em mais de 140.000 voltas conversacionais entre humanos e agentes treinados para imitar uma personalidade específica. Este conjunto de dados é adequado para treinar modelos que possam gerar respostas conversacionais consistentes com uma personalidade.
+    https://huggingface.co/datasets/conv_ai_2
+    - [CoQA]: Um conjunto de dados que consiste em mais de 127.000 perguntas e respostas sobre 8.000 textos narrativos em inglês, juntamente com diálogos entre humanos e agentes sobre esses textos. Este conjunto de dados é adequado para treinar modelos que possam gerar respostas conversacionais baseadas em evidências textuais.
+    https://stanfordnlp.github.io/coqa/
+
+- Text Generation (Geração de Texto): Para esta tarefa, você pode usar um dos seguintes conjuntos de dados:
+    - [WebText]: Um conjunto de dados que consiste em mais de 40 milhões de palavras extraídas de páginas web que foram consideradas interessantes pelos usuários do Reddit. Este conjunto de dados é adequado para treinar modelos que possam gerar textos diversos e atraentes sobre vários tópicos.
+    - [WritingPrompts]: Um conjunto de dados que consiste em mais de 300.000 prompts criativos para escrita, juntamente com histórias geradas por humanos a partir desses prompts. Este conjunto de dados é adequado para treinar modelos que possam gerar histórias originais e imaginativas a partir de um prompt inicial.
+    https://www.kaggle.com/datasets/ratthachat/writing-prompts
+    - [LAMBADA]: Um conjunto de dados que consiste em mais de 10.000 trechos literários em inglês, juntamente com a última palavra omitida. Este conjunto de dados é adequado para treinar modelos que possam gerar palavras surpreendentes e coerentes a partir do contexto.
+    https://huggingface.co/datasets/lambada
+    - [DART]: Um conjunto de dados que consiste em mais de 82.000 pares texto-tabela, juntamente com transformações textuais aplicadas às tabelas. Este conjunto de dados é adequado para treinar modelos que possam gerar textos a partir de tabelas ou vice-versa.
+    https://huggingface.co/datasets/dart
+
+- Text2Text Generation (Geração de Texto para Texto): Para esta tarefa, você pode usar um dos seguintes conjuntos de dados:
+    - [Multi30k]: Um conjunto de dados que consiste em 30.000 pares de frases em inglês, alemão e francês, extraídos de legendas de imagens. Este conjunto de dados é adequado para treinar modelos que possam gerar descrições de imagens ou traduzir frases entre idiomas.
+    https://github.com/multi30k/dataset
+    - [XSum]: Um conjunto de dados que consiste em mais de 200.000 artigos jornalísticos da BBC em inglês, juntamente com resumos de uma única frase. Este conjunto de dados é adequado para treinar modelos que possam gerar resumos abstrativos curtos e informativos.
+    https://huggingface.co/datasets/xsum
+    - [ParaCrawl]: Um conjunto de dados que consiste em mais de 3 bilhões de sentenças paralelas em 40 idiomas extraídas da web. Este conjunto de dados é adequado para treinar modelos que possam traduzir textos entre vários idiomas e domínios.
+    https://paracrawl.eu/
+    - [Tatoeba]: Um conjunto de dados que consiste em mais de 8 milhões de sentenças paralelas em 325 idiomas extraídas do projeto Tatoeba, uma plataforma colaborativa para criar e compartilhar sentenças exemplares. Este conjunto de dados é adequado para treinar modelos que possam gerar exemplos simples e naturais em diferentes idiomas.
+    https://tatoeba.org/pt-br/downloads
+
+- Text Retrieval (Recuperação de Texto): Para esta tarefa, você pode usar um dos seguintes conjuntos de dados:
+    - [MS MARCO]: Um conjunto de dados que consiste em mais de 1 milhão de pares pergunta-resposta reais dos usuários do Bing, juntamente com mais de 8 milhões de documentos candidatos extraídos da web. Este conjunto de dados é adequado para treinar modelos que possam recuperar documentos relevantes para uma consulta.
+    https://microsoft.github.io/msmarco/
+    - [Natural Questions]: Um conjunto de dados que consiste em mais de 300.000 perguntas reais dos usuários do Google sobre páginas da Wikipedia, juntamente com trechos do texto que contêm as respostas curtas e longas. Este conjunto de dados é adequado para treinar modelos que possam recuperar trechos relevantes para uma pergunta.
+    https://ai.google.com/research/NaturalQuestions/download
+    - [WikiPassageQA]: Um conjunto de dados que consiste em mais de 4.000 perguntas sobre 8.841 artigos da Wikipedia, juntamente com passagens candidatas e passagens relevantes. Este conjunto de dados é adequado para treinar modelos que possam recuperar passagens relevantes para uma pergunta.
+    https://ciir.cs.umass.edu/downloads/wikipassageqa/
+     [CORD-19]: Um conjunto de dados que consiste em mais de 400.000 artigos científicos sobre COVID-19 e doenças relacionadas, juntamente com várias tarefas e desafios sobre recuperação e análise desses artigos. Este conjunto de dados é adequado para treinar modelos que possam recuperar informações científicas sobre a pandemia.
+    https://allenai.org/data/cord-19
+
+- Text Classification (Classificação de Texto): Para esta tarefa, você pode usar um dos seguintes conjuntos de dados:
+    - AG News: Um conjunto de dados de classificação de notícias em quatro categorias: Mundo, Esportes, Negócios e Ciência/Tecnologia. Este conjunto de dados é adequado para treinar modelos que possam identificar o tópico principal de um texto jornalístico.
+    https://paperswithcode.com/dataset/ag-news
+    - DBPedia: Um conjunto de dados de classificação de textos em 14 categorias não sobrepostas extraídas da DBPedia, uma base de conhecimento derivada da Wikipedia. Este conjunto de dados é adequado para treinar modelos que possam reconhecer o tipo ou domínio de um texto enciclopédico.
+    http://wikidata.dbpedia.org/develop/datasets
+    - SST-2: Um conjunto de dados de análise de sentimento binário em frases extraídas de críticas de filmes. Este conjunto de dados é adequado para treinar modelos que possam detectar a polaridade (positiva ou negativa) de um texto opinativo.
+    https://huggingface.co/datasets/sst2
+    - TweetsBR: Um conjunto de dados de análise de sentimento em tweets em português brasileiro, com três classes: Positivo, Negativo e Neutro. Este conjunto de dados é adequado para treinar modelos que possam capturar o sentimento expresso em textos curtos e informais.
+    https://imerit.net/blog/top-25-twitter-datasets-for-natural-language-processing-and-machine-learning-all-pbm/

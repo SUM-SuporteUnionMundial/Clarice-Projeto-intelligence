@@ -1,0 +1,9 @@
+- Zero-Shot Classification: Esta é a tarefa de classificar um texto em uma ou mais classes sem nenhum treinamento prévio ou conhecimento das classes. Alguns conjuntos de dados populares para esta tarefa são:
+    - XNLI: Um conjunto de dados que consiste em 5.000 pares de frases em 15 idiomas, juntamente com rótulos indicando se as frases são implicações, contradições ou neutras entre si.
+    https://github.com/facebookresearch/XNLI
+    - MNLI: Um conjunto de dados que consiste em 433.000 pares de frases em inglês, juntamente com rótulos indicando se as frases são implicações, contradições ou neutras entre si.
+    https://huggingface.co/datasets/multi_nli
+    - SNLI: Um conjunto de dados que consiste em 570.000 pares de frases em inglês, juntamente com rótulos indicando se as frases são implicações, contradições ou neutras entre si.
+    https://nlp.stanford.edu/projects/snli/
+    - HANS: Um conjunto de dados que consiste em 30.000 pares de frases em inglês, juntamente com rótulos indicando se as frases são implicações ou não-implicações entre si.
+    https://huggingface.co/datasets/hans

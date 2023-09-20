@@ -1,0 +1,9 @@
+- Multiple Choice (Escolha Múltipla): Para esta tarefa, você pode usar um dos seguintes conjuntos de dados:
+    - RACE: Um conjunto de dados que consiste em mais de 28.000 perguntas de escolha múltipla sobre artigos em inglês, extraídos de exames escolares na China. Este conjunto de dados é adequado para treinar modelos que possam avaliar a compreensão de leitura e o raciocínio lógico.
+    https://huggingface.co/datasets/race
+    - SWAG: Um conjunto de dados que consiste em mais de 113.000 perguntas de escolha múltipla sobre situações hipotéticas, geradas a partir de legendas de vídeos. Este conjunto de dados é adequado para treinar modelos que possam prever o desfecho mais provável ou plausível de uma situação.
+    https://huggingface.co/datasets/swag
+    - PIQA: Um conjunto de dados que consiste em mais de 16.000 perguntas de escolha múltipla sobre problemas práticos do cotidiano, extraídos da web. Este conjunto de dados é adequado para treinar modelos que possam resolver problemas comuns usando o senso comum e o conhecimento geral.
+    https://huggingface.co/datasets/piqa
+    - MCTest: Um conjunto de dados que consiste em mais de 2.600 perguntas de escolha múltipla sobre histórias ficcionais curtas, escritas por humanos. Este conjunto de dados é adequado para treinar modelos que possam responder perguntas que requerem compreensão do enredo, dos personagens e dos detalhes das histórias.
+    https://mattr1.github.io/mctest/

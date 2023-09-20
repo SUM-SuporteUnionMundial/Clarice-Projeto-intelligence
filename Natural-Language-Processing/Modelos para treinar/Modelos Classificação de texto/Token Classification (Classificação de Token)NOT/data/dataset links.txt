@@ -1,0 +1,9 @@
+- Token Classification (Classificação de Token): Para esta tarefa, você pode usar um dos seguintes conjuntos de dados:
+    - CoNLL-2003: Um conjunto de dados para Reconhecimento de Entidades Nomeadas (NER) em inglês, alemão, espanhol e holandês, com quatro tipos de entidades: Pessoa, Localização, Organização e Miscelânea. Este conjunto de dados é adequado para treinar modelos que possam extrair nomes próprios e suas categorias semânticas a partir de um texto.
+    https://huggingface.co/datasets/conll2003
+    - [WNUT-17]: Um conjunto de dados para NER em textos provenientes das mídias sociais, com seis tipos de entidades: Pessoa, Localização, Corporação, Produto, Grupo Criativo e Outro. Este conjunto de dados é adequado para treinar modelos que possam lidar com entidades emergentes e não convencionais a partir de um texto informal.
+    https://huggingface.co/datasets/wnut_17
+    - [UD-POS]: Um conjunto de dados para Part-of-Speech (PoS) tagging em 124 idiomas, usando o esquema universal de dependências. Este conjunto de dados é adequado para treinar modelos que possam atribuir etiquetas gramaticais a cada palavra ou token em um texto.
+    https://universaldependencies.org/
+    - [Mac-Morpho]: Um conjunto de dados para PoS tagging em português brasileiro, com 26 etiquetas gramaticais. Este conjunto de dados é adequado para treinar modelos que possam analisar a estrutura morfológica do português brasileiro.
+    http://www.nilc.icmc.usp.br/macmorpho/

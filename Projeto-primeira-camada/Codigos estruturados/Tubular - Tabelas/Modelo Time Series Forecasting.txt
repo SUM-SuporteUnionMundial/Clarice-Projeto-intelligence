@@ -1,0 +1,172 @@
+class TimeSeriesClassicMethods:
+    def __init__(self, time_series):
+        self.time_series = time_series
+    
+    def moving_average(self, window_size):
+        # Implementar o cálculo da média móvel
+        predictions = []
+        for i in range(len(self.time_series) - window_size + 1):
+            predictions.append(sum(self.time_series[i:i+window_size]) / window_size)
+        return predictions
+    
+    def exponential_smoothing(self, alpha):
+        # Implementar a suavização exponencial
+        predictions = []
+        smoothed = self.time_series[0]
+        for i in range(1, len(self.time_series)):
+            smoothed = alpha * self.time_series[i] + (1 - alpha) * smoothed
+            predictions.append(smoothed)
+        return predictions
+    
+    def arima(self, order):
+        # Implementar o modelo ARIMA
+        import statsmodels.api as sm
+        model = sm.tsa.ARIMA(self.time_series, order=order)
+        model_fit = model.fit()
+        predictions = model_fit.predict(start=len(self.time_series), end=len(self.time_series) + 10)
+        return predictions
+        
+    def combine_classic_methods(self, window_size, alpha, order):
+        ma_predictions = self.moving_average(window_size)
+        es_predictions = self.exponential_smoothing(alpha)
+        arima_predictions = self.arima(order)
+        
+        # Média das previsões dos métodos clássicos
+        combined_predictions = (ma_predictions + es_predictions + arima_predictions) / 3
+        return combined_predictions
+        
+class TimeSeriesNeuralMethods:
+    def __init__(self, time_series):
+        self.time_series = time_series
+    
+    def lstm_model(self):
+        # Arquitetura LSTM
+        from tensorflow.keras.models import Sequential
+        from tensorflow.keras.layers import LSTM, Dense
+        model = Sequential()
+        model.add(LSTM(128, input_shape=(len(self.time_series[0]), 1)))
+        model.add(Dense(1))
+        model.compile(optimizer='adam', loss='mse')
+        model.fit(self.time_series[-100:], self.time_series[-101:], epochs=10)
+        predictions = model.predict(self.time_series[-100:])
+        return predictions
+    
+    def gru_model(self):
+        # Arquitetura GRU
+        from tensorflow.keras.models import Sequential
+        from tensorflow.keras.layers import GRU, Dense
+        model = Sequential()
+        model.add(GRU(128, input_shape=(len(self.time_series[0]), 1)))
+        model.add(Dense(1))
+        model.compile(optimizer='adam', loss='mse')
+        model.fit(self.time_series[-100:], self.time_series[-101:], epochs=10)
+        predictions = model.predict(self.time_series[-100:])
+        return predictions
+    
+    def cnn_model(self):
+        # Arquitetura CNN
+        from tensorflow.keras.models import Sequential
+        from tensorflow.keras.layers import Conv1D, Dense
+        model = Sequential()
+        model.add(Conv1D(64, 3, activation='relu', input_shape=(len(self.time_series[0]), 1)))
+        model.add(Dense(1))
+        model.compile(optimizer='adam', loss='mse')
+        model.fit(self.time_series[-100:], self.time_series[-101:], epochs=10)
+        predictions = model.predict(self.time_series[-100:])
+        return predictions
+    
+    def prophet_model(self):
+        # Modelo Prophet
+        from fbprophet import Prophet
+        model = Prophet()
+        model.fit(self.time_series)
+        future = model.make_future_dataframe(periods=10)
+        predictions = model.predict(future)
+        return predictions['yhat']
+    
+    def xgboost_model(self):
+        # Modelo XGBoost
+        from xgboost import XGBRegressor
+        model = XGBRegressor()
+        model.fit(self.time_series[-100:].reshape(-1, 1), self.time_series[-101:])
+        predictions = model.predict(self.time_series[-100:].reshape(-1, 1))
+        return predictions
+    
+    def lightgbm_model(self):
+        # Modelo LightGBM
+        from lightgbm import LGBMRegressor
+        model = LGBMRegressor()
+        model.fit(self.time_series[-100:].reshape(-1, 1), self.time_series[-101:])
+        predictions = model.predict(self.time_series[-100:].reshape(-1, 1))
+        return predictions
+    
+    def catboost_model(self):
+        # Modelo CatBoost
+        from catboost import CatBoostRegressor
+        model = CatBoostRegressor()
+        model.fit(self.time_series[-100:].reshape(-1, 1), self.time_series[-101:])
+        predictions = model.predict(self.time_series[-100:].reshape(-1, 1))
+        return predictions
+        
+    def seq2seq_with_lstm(self):
+            # Implementar a arquitetura Seq2Seq com LSTM
+            from tensorflow.keras.models import Sequential
+            from tensorflow.keras.layers import LSTM, Dense, TimeDistributed
+            model = Sequential()
+            model.add(LSTM(128, input_shape=(None, len(self.time_series[0]), 1)))
+            model.add(TimeDistributed(Dense(1)))
+            model.compile(optimizer='adam', loss='mse')
+            model.fit(self.time_series[-100:], self.time_series[-101:], epochs=10)
+            predictions = model.predict(self.time_series[-100:])
+            return predictions
+        
+    def combine_neural_and_classic_methods(self):
+        lstm_predictions = self.lstm_model()
+        gru_predictions = self.gru_model()
+        cnn_predictions = self.cnn_model()
+        prophet_predictions = self.prophet_model()
+        xgboost_predictions = self.xgboost_model()
+        lightgbm_predictions = self.lightgbm_model()
+        catboost_predictions = self.catboost_model()
+        seq2seq_lstm_predictions = self.seq2seq_with_lstm()
+        
+        # Combinar as previsões das redes neurais com os métodos clássicos
+        combined_predictions = (
+            lstm_predictions + gru_predictions + cnn_predictions +
+            prophet_predictions + xgboost_predictions +
+            lightgbm_predictions + catboost_predictions + seq2seq_lstm_predictions
+        ) / 8
+        return combined_predictions
+
+
+class TimeSeriesForecastingModel:
+    def __init__(self, time_series, num_classes):
+        self.time_series = time_series
+        self.num_classes = num_classes
+        
+        self.classic_methods = TimeSeriesClassicMethods(self.time_series)
+        self.neural_methods = TimeSeriesNeuralMethods(self.time_series)
+    
+    def build_combined_model(self):
+        classic_predictions = self.classic_methods.combine_classic_methods(window_size, alpha, order)
+        
+        lstm_predictions = self.neural_methods.lstm_model()
+        gru_predictions = self.neural_methods.gru_model()
+        cnn_predictions = self.neural_methods.cnn_model()
+        prophet_predictions = self.neural_methods.prophet_model()
+        xgboost_predictions = self.neural_methods.xgboost_model()
+        lightgbm_predictions = self.neural_methods.lightgbm_model()
+        catboost_predictions = self.neural_methods.catboost_model()
+        seq2seq_lstm_predictions = self.neural_methods.seq2seq_with_lstm()
+        
+        combined_predictions = (
+            classic_predictions + lstm_predictions + gru_predictions + cnn_predictions +
+            prophet_predictions + xgboost_predictions +
+            lightgbm_predictions + catboost_predictions + seq2seq_lstm_predictions
+        ) / 9
+        
+        inputs = tf.keras.layers.Input(shape=(self.time_series.shape[1],))
+        outputs = tf.keras.layers.Dense(self.num_classes, activation='softmax')(inputs)
+        
+        model = tf.keras.models.Model(inputs=inputs, outputs=outputs)
+        return model

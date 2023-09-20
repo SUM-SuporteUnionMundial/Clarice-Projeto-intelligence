@@ -1,0 +1,8 @@
+- Text Generation (Geração de Texto): Para esta tarefa, você pode usar um dos seguintes conjuntos de dados:
+    - [WebText]: Um conjunto de dados que consiste em mais de 40 milhões de palavras extraídas de páginas web que foram consideradas interessantes pelos usuários do Reddit. Este conjunto de dados é adequado para treinar modelos que possam gerar textos diversos e atraentes sobre vários tópicos.
+    - [WritingPrompts]: Um conjunto de dados que consiste em mais de 300.000 prompts criativos para escrita, juntamente com histórias geradas por humanos a partir desses prompts. Este conjunto de dados é adequado para treinar modelos que possam gerar histórias originais e imaginativas a partir de um prompt inicial.
+    https://www.kaggle.com/datasets/ratthachat/writing-prompts
+    - [LAMBADA]: Um conjunto de dados que consiste em mais de 10.000 trechos literários em inglês, juntamente com a última palavra omitida. Este conjunto de dados é adequado para treinar modelos que possam gerar palavras surpreendentes e coerentes a partir do contexto.
+    https://huggingface.co/datasets/lambada
+    - [DART]: Um conjunto de dados que consiste em mais de 82.000 pares texto-tabela, juntamente com transformações textuais aplicadas às tabelas. Este conjunto de dados é adequado para treinar modelos que possam gerar textos a partir de tabelas ou vice-versa.
+    https://huggingface.co/datasets/dart

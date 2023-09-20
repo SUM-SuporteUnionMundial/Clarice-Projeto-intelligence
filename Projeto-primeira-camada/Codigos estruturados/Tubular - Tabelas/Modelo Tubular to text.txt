@@ -1,0 +1,107 @@
+#tubular to text
+class TextRetrievalModule:
+    def __init__(self, corpus):
+        self.corpus = corpus
+        self.tfidf_vectorizer = TfidfVectorizer()
+        self.word2vec_model = Word2Vec(sentences=[sentence.split() for sentence in corpus], vector_size=100, window=5, min_count=1, sg=0)
+        self.bert_layer = BERTLayer()
+    
+    def tfidf_representation(self):
+        tfidf_results = self.tfidf_vectorizer.fit_transform(self.corpus)
+        return tfidf_results
+    
+    def word2vec_representation(self):
+        word2vec_results = [sum(self.word2vec_model.wv[word] for word in sentence.split()) / len(sentence.split()) for sentence in self.corpus]
+        return tf.convert_to_tensor(word2vec_results)
+    
+    def bert_representation(self):
+        bert_results = self.bert_layer.encode_text(self.corpus)
+        return bert_results
+    
+    def combine_methods(self):
+        tfidf_results = self.tfidf_representation()
+        word2vec_results = self.word2vec_representation()
+        bert_results = self.bert_representation()
+        combined_results = tf.concat([tfidf_results.toarray(), word2vec_results, bert_results], axis=-1)
+        return combined_results
+
+    def retrieve_text_features(self, tabular_inputs):
+        tfidf_results = self.tfidf_representation()
+        word2vec_results = self.word2vec_representation()
+        bert_results = self.bert_representation()
+
+        combined_results = tf.concat([tfidf_results.toarray(), word2vec_results, bert_results], axis=-1)
+        return combined_results
+
+class TextRetrievalNetwork:
+    def __init__(self, corpus, num_classes):
+        self.text_retrieval_module = TextRetrievalModule(corpus)
+        self.num_classes = num_classes
+    
+    def build_model(self, base_model):
+        combined_results = self.text_retrieval_module.combine_methods()
+        
+        x = base_model.output
+        x = tf.keras.layers.concatenate([x, combined_results])
+        x = tf.keras.layers.Dense(units=128, activation='relu')(x)
+        x = tf.keras.layers.Dense(units=64, activation='relu')(x)
+        output = tf.keras.layers.Dense(units=self.num_classes, activation='softmax')(x)
+        
+        model = tf.keras.Model(inputs=base_model.input, outputs=output)
+        return model
+
+class TabularToText:
+    def __init__(self, num_features, text_retrieval_module):
+        self.num_features = num_features
+        self.text_retrieval_module = text_retrieval_module
+        
+    def build_model(self):
+        inputs = tf.keras.layers.Input(shape=(self.num_features,))
+        text_features = self.text_retrieval_module.retrieve_text_features(inputs)
+        
+        text_inputs = tf.keras.layers.Input(shape=(text_features.shape[1],))
+        combined_features = tf.keras.layers.concatenate([inputs, text_inputs])
+        
+        x = tf.keras.layers.Dense(128, activation='relu')(combined_features)
+        x = tf.keras.layers.Dense(64, activation='relu')(x)
+        outputs = tf.keras.layers.Dense(1)(x)
+        
+        model = tf.keras.models.Model(inputs=[inputs, text_inputs], outputs=outputs)
+        return model
+
+class TextRetrievalPipeline:
+    def __init__(self, corpus, num_classes, num_features):
+        self.corpus = corpus
+        self.num_classes = num_classes
+        self.num_features = num_features
+    
+    def build_combined_model(self, base_model):
+        text_retrieval_module = TextRetrievalModuleTubular(self.corpus)
+        text_retrieval_network = TextRetrievalNetworkTubular(self.corpus, self.num_classes)
+        tabular_to_text = TabularToTextTubular(self.num_features, text_retrieval_module)
+        
+        combined_model = text_retrieval_network.build_model(base_model)
+        tabular_to_text_model = tabular_to_text.build_model()
+        
+        # Incorporar os resultados da TabularToText no modelo combinado
+        x = combined_model.output
+        tabular_output = tabular_to_text_model([x, tabular_to_text_model.input[1]])
+        combined_output = tf.keras.layers.concatenate([x, tabular_output])
+        final_output = tf.keras.layers.Dense(self.num_classes, activation='softmax')(combined_output)
+        
+        complete_model = tf.keras.models.Model(inputs=[combined_model.input, tabular_to_text_model.input[0]], outputs=final_output)
+        return complete_model
+
+# Exemplo de uso
+corpus = ["Texto 1 exemplo", "Exemplo de texto 2", "Texto 3 para teste"]
+num_features = 10  # Número de features dos dados tabulares
+num_classes = 2   # Número de classes para classificação/regressão
+
+# Carregar uma arquitetura de rede neural pré-existente (substitua pelo modelo real)
+base_model = tf.keras.applications.MobileNetV2(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
+
+# Criar uma instância da TextRetrievalPipeline
+text_retrieval_pipeline = TextRetrievalPipeline(corpus, num_classes, num_features)
+
+# Construir o modelo combinado
+complete_model = text_retrieval_pipeline.build_combined_model(base_model)

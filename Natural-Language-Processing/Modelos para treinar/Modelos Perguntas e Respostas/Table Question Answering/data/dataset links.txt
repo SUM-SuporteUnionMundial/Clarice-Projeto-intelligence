@@ -1,0 +1,13 @@
+- Table Question Answering (Perguntas e Respostas em Tabelas): Para esta tarefa, você pode usar um dos seguintes conjuntos de dados:
+    - WikiTableQuestions: Um conjunto de dados que consiste em 22.033 perguntas sobre 2.108 tabelas da Wikipedia, juntamente com respostas corretas.
+    https://github.com/ppasupat/WikiTableQuestions/releases
+    - TableQA: Um conjunto de dados que consiste em 118.018 perguntas sobre 5.659 tabelas extraídas do site Statista.com, juntamente com respostas corretas.
+    https://pypi.org/project/tableqa/
+    - [WikiSQL]: Um conjunto de dados que consiste em 80.654 pares pergunta-resposta naturais sobre 24.241 tabelas da Wikipedia, juntamente com consultas SQL correspondentes. Este conjunto de dados é adequado para treinar modelos que possam responder perguntas sobre tabelas usando linguagem natural ou SQL.
+    https://github.com/salesforce/WikiSQL
+    - [SQA]: Um conjunto de dados que consiste em 6.066 perguntas sobre 200 tabelas extraídas do WikiTableQuestions, juntamente com consultas SQL correspondentes. Este conjunto de dados é adequado para treinar modelos que possam responder perguntas sequenciais sobre tabelas usando SQL.
+    https://sqa.stackexchange.com/questions/2197/how-to-download-a-file-using-seleniums-webdriver
+    - [TabFact]: Um conjunto de dados que consiste em 16.621 declarações sobre 1.118 tabelas da Wikipedia, juntamente com rótulos indicando se as declarações são verdadeiras ou falsas. Este conjunto de dados é adequado para treinar modelos que possam verificar a veracidade das declarações sobre tabelas usando evidências.
+    https://sqa.stackexchange.com/questions/2197/how-to-download-a-file-using-seleniums-webdriver
+    - [TaPas]: Um conjunto de dados que consiste em 113.215 perguntas sobre 6.659 tabelas da Wikipedia, juntamente com respostas baseadas em células ou agregações. Este conjunto de dados é adequado para treinar modelos que possam responder perguntas sobre tabelas usando operações semânticas.
+    https://github.com/google-research/tapas

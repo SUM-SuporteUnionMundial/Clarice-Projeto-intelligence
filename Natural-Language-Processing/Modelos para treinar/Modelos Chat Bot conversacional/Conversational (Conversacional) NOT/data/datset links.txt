@@ -1,0 +1,13 @@
+- Conversational (Conversacional): Para esta tarefa, você pode usar um dos seguintes conjuntos de dados:
+    - [DailyDialog]: Um conjunto de dados que consiste em mais de 13.000 diálogos diários sobre vários tópicos e cenários, juntamente com atos e emoções dos falantes. Este conjunto de dados é adequado para treinar modelos que possam gerar respostas conversacionais naturais e coerentes.
+    https://huggingface.co/datasets/daily_dialog
+    - [PersonaChat]: Um conjunto de dados que consiste em mais de 160.000 voltas conversacionais entre dois interlocutores fictícios que têm perfis pessoais atribuídos. Este conjunto de dados é adequado para treinar modelos que possam gerar respostas conversacionais consistentes e personalizadas.
+    https://www.kaggle.com/datasets/atharvjairath/personachat
+    - [BlendedSkillTalk]: Um conjunto de dados que consiste em mais de 7.000 diálogos entre humanos e agentes treinados para combinar habilidades conversacionais como personalidade, conhecimento e empatia. Este conjunto
+    https://huggingface.co/datasets/blended_skill_talk
+    - [DialoGPT]: Um modelo pré-treinado para geração conversacional baseado no GPT-2, que foi treinado em mais de 147 milhões de voltas conversacionais extraídas do Reddit. Este modelo é adequado para gerar respostas conversacionais informais e humorísticas.
+    https://www.microsoft.com/en-us/research/project/large-scale-pretraining-for-response-generation/downloads/
+    - [ConvAI2]: Um conjunto de dados que consiste em mais de 140.000 voltas conversacionais entre humanos e agentes treinados para imitar uma personalidade específica. Este conjunto de dados é adequado para treinar modelos que possam gerar respostas conversacionais consistentes com uma personalidade.
+    https://huggingface.co/datasets/conv_ai_2
+    - [CoQA]: Um conjunto de dados que consiste em mais de 127.000 perguntas e respostas sobre 8.000 textos narrativos em inglês, juntamente com diálogos entre humanos e agentes sobre esses textos. Este conjunto de dados é adequado para treinar modelos que possam gerar respostas conversacionais baseadas em evidências textuais.
+    https://stanfordnlp.github.io/coqa/

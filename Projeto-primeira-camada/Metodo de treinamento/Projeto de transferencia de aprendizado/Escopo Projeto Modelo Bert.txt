@@ -1,0 +1,45 @@
+Escopo do Projeto: Treinamento e Avaliação de Modelo de Perguntas e Respostas com BERT
+
+Objetivo:
+O objetivo deste projeto é desenvolver um sistema de treinamento e avaliação de um modelo de Perguntas e Respostas utilizando a arquitetura BERT (Bidirectional Encoder Representations from Transformers). O projeto visa capacitar o modelo a compreender o contexto de um conjunto de dados de perguntas e respostas, treiná-lo para fornecer respostas precisas e avaliar seu desempenho.
+
+Passos do Projeto:
+
+Preparação dos Dados:
+
+Importar um conjunto de dados contendo perguntas, respostas e contextos.
+Pré-processar os dados, tokenizando-os e preparando-os para serem usados no treinamento do modelo.
+Dividir os dados em conjuntos de treinamento e validação.
+Definição da Arquitetura do Modelo:
+
+Utilizar a arquitetura BERT pré-treinada como base para o modelo de Perguntas e Respostas.
+Carregar um modelo BERT pré-treinado da biblioteca Transformers.
+Criação do Conjunto de Dados Personalizado:
+
+Criar uma classe de conjunto de dados personalizado que se encarregará de tokenizar, codificar e preparar os dados para o treinamento.
+Treinamento do Modelo:
+
+Implementar um loop de treinamento que passa pelos batches do conjunto de treinamento.
+Utilizar otimização e função de perda para atualizar os parâmetros do modelo durante o treinamento.
+Implementar monitoramento periódico para acompanhar o progresso do treinamento, exibindo informações como tempo decorrido, porcentagem de conclusão e perda média.
+Escolha do Caminho:
+
+Oferecer ao usuário a opção de treinar um novo modelo a partir do zero ou carregar um modelo existente.
+Avaliação do Desempenho:
+
+Avaliar o desempenho do modelo carregado ou recém-treinado em um conjunto de dados de validação.
+Comparar as respostas previstas pelo modelo com as respostas reais e calcular a acurácia.
+Iteração e Otimização:
+
+Caso o modelo não atinja um desempenho aceitável, ajustar hiperparâmetros, estratégias de treinamento ou arquitetura do modelo e repetir os passos 4 a 6 até que o desempenho seja satisfatório.
+Finalização do Projeto:
+
+Salvar o modelo treinado para uso futuro.
+Fornecer opções ao usuário: continuar o treinamento, salvar o modelo atual ou encerrar o projeto.
+Entregáveis:
+
+Código fonte completo do projeto, incluindo classes para criação do conjunto de dados, treinamento e avaliação do modelo.
+Relatório descrevendo o processo de desenvolvimento, escolhas de hiperparâmetros, resultados da avaliação e aprendizados obtidos.
+Modelo treinado e pronto para uso.
+Observações Finais:
+Este projeto permitirá criar um modelo de Perguntas e Respostas alimentado pelo poder da arquitetura BERT. A abordagem passo a passo garantirá um entendimento profundo de cada etapa do processo, desde a preparação dos dados até a avaliação do desempenho final. O resultado final será um modelo capaz de fornecer respostas precisas e coerentes com base em um contexto dado.

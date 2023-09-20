@@ -1,0 +1,9 @@
+- Text Classification (Classificação de Texto): Para esta tarefa, você pode usar um dos seguintes conjuntos de dados:
+    - AG News: Um conjunto de dados de classificação de notícias em quatro categorias: Mundo, Esportes, Negócios e Ciência/Tecnologia. Este conjunto de dados é adequado para treinar modelos que possam identificar o tópico principal de um texto jornalístico.
+    https://paperswithcode.com/dataset/ag-news
+    - DBPedia: Um conjunto de dados de classificação de textos em 14 categorias não sobrepostas extraídas da DBPedia, uma base de conhecimento derivada da Wikipedia. Este conjunto de dados é adequado para treinar modelos que possam reconhecer o tipo ou domínio de um texto enciclopédico.
+    http://wikidata.dbpedia.org/develop/datasets
+    - SST-2: Um conjunto de dados de análise de sentimento binário em frases extraídas de críticas de filmes. Este conjunto de dados é adequado para treinar modelos que possam detectar a polaridade (positiva ou negativa) de um texto opinativo.
+    https://huggingface.co/datasets/sst2
+    - TweetsBR: Um conjunto de dados de análise de sentimento em tweets em português brasileiro, com três classes: Positivo, Negativo e Neutro. Este conjunto de dados é adequado para treinar modelos que possam capturar o sentimento expresso em textos curtos e informais.
+    https://imerit.net/blog/top-25-twitter-datasets-for-natural-language-processing-and-machine-learning-all-pbm/

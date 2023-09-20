@@ -1,0 +1,9 @@
+- Summarization (Sumarização): Para esta tarefa, você pode usar um dos seguintes conjuntos de dados:
+    - [CNN/Daily Mail]: Um conjunto de dados que consiste em mais de 300.000 artigos jornalísticos em inglês, juntamente com resumos destacados. Este conjunto de dados é adequado para treinar modelos que possam gerar resumos extrativos a partir de textos longos.
+    https://www.kaggle.com/datasets/gowrishankarp/newspaper-text-summarization-cnn-dailymail
+    - [XSum]: Um conjunto de dados que consiste em mais de 200.000 artigos jornalísticos da BBC em inglês, juntamente com resumos de uma única frase. Este conjunto de dados é adequado para treinar modelos que possam gerar resumos abstrativos curtos e informativos.
+    https://huggingface.co/datasets/xsum
+    - [Gigaword]: Um conjunto de dados que consiste em mais de 10 milhões de artigos jornalísticos em inglês, juntamente com títulos abreviados. Este conjunto de dados é adequado para treinar modelos que possam gerar títulos concisos a partir de textos longos.
+    https://www.tensorflow.org/datasets/catalog/gigaword?hl=pt-br
+    - [Multi-News]: Um conjunto de dados que consiste em mais de 50.000 artigos jornalísticos sobre o mesmo evento a partir de diferentes fontes, juntamente com resumos multi-documento. Este conjunto de dados é adequado para treinar modelos que possam gerar resumos abrangentes a partir de múltiplas perspectivas.
+    https://huggingface.co/datasets/multi_news

@@ -1,0 +1,55 @@
+class TabularRegressionModule:
+    def __init__(self, corpus):
+        self.corpus = corpus
+        self.tfidf_vectorizer = TfidfVectorizer()
+        self.word2vec_model = Word2Vec(sentences=[sentence.split() for sentence in corpus], vector_size=100, window=5, min_count=1, sg=0)
+        self.bert_layer = BERTLayer()
+    
+    def tfidf_representation(self):
+        tfidf_results = self.tfidf_vectorizer.fit_transform(self.corpus)
+        return tfidf_results
+    
+    def word2vec_representation(self):
+        word2vec_results = [sum(self.word2vec_model.wv[word] for word in sentence.split()) / len(sentence.split()) for sentence in self.corpus]
+        return tf.convert_to_tensor(word2vec_results)
+    
+    def bert_representation(self):
+        bert_results = self.bert_layer.encode_text(self.corpus)
+        return bert_results
+    
+    def combine_methods(self):
+        tfidf_results = self.tfidf_representation()
+        word2vec_results = self.word2vec_representation()
+        bert_results = self.bert_representation()
+        combined_results = tf.concat([tfidf_results.toarray(), word2vec_results, bert_results], axis=-1)
+        return combined_results
+
+class TabularRegressionNetwork:
+    def __init__(self, corpus, num_features):
+        self.tabular_regression_module = TabularRegressionModule(corpus)
+        self.num_features = num_features
+    
+    def build_model(self):
+        tabular_inputs = tf.keras.layers.Input(shape=(self.num_features,))
+        text_features = self.tabular_regression_module.combine_methods()
+        
+        # Concatenar os recursos tabulares e de texto
+        combined_features = tf.keras.layers.concatenate([tabular_inputs, text_features])
+        
+        x = tf.keras.layers.Dense(128, activation='relu')(combined_features)
+        x = tf.keras.layers.Dense(64, activation='relu')(x)
+        output = tf.keras.layers.Dense(units=1)(x)
+        
+        model = tf.keras.Model(inputs=[tabular_inputs], outputs=output)
+        return model
+
+# Exemplo de uso
+corpus = ["Texto 1 exemplo", "Exemplo de texto 2", "Texto 3 para teste"]
+num_features = 10  # Número de features dos dados tabulares
+
+# Criar uma instância da TabularRegressionNetwork
+tabular_regression_network = TabularRegressionNetwork(corpus, num_features)
+
+# Construir o modelo de regressão
+regression_model = tabular_regression_network.build_model()
+
